@@ -91,6 +91,5 @@ import SelectComponent from '../layout/components/EmitProps/SelectComponent.vue'
 import RadioGroupComponent from '../layout/components/EmitProps/RadioGroupComponent.vue'
 import CheckboxComponent from '../layout/components/EmitProps/CheckboxComponent.vue'
 
-
 const tab = ref(null);
 </script>

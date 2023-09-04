@@ -1,13 +1,14 @@
 <template>
     <v-app class="no_dot">
         <v-container fluid>
-            <MainLayout />
+            <TabComponent />
         </v-container>
     </v-app>
 </template>
 
 <script setup>
 import MainLayout from './components/layout/MainLayout.vue'
+import TabComponent from './components/layout/TabComponent.vue';
 
 </script>
 
