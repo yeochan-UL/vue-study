@@ -6,7 +6,7 @@
     
     <div style="margin-top: 30px;">
         <v-btn dark color="blue" @click="changeProperty">deep</v-btn>
-        <v-btn style="margin-left: 5px;" dark color="blue" @click="changeNoneProperty">none</v-btn>
+        <v-btn style="margin-left: 5px;" dark color="red" @click="changeNoneProperty">none</v-btn>
     </div>
     <div style="margin-top: 15px;">
         <p>deep 속성 <span style="font-weight: bold;">있음</span></p>
@@ -15,6 +15,15 @@
     <div style="margin-top: 15px;">
         <p>deep 속성 <span style="font-weight: bold;">없음</span></p>
         {{ watchNoneText }}
+    </div>
+    <h3 style="margin-top: 20px;">Watch immediateTest 속성</h3>
+    <div style="margin-top: 10px;">
+        <p>immediate 속성 <span style="font-weight: bold;">있음</span></p>
+        {{ immediateTest1 }}
+    </div>
+    <div style="margin-top: 15px;">
+        <p>immediate 속성 <span style="font-weight: bold;">없음</span></p>
+        {{ immediateTest2 }}
     </div>
 </div>
 </template>
@@ -51,5 +60,17 @@ const changeNoneProperty = () => {
 watch(watchedNone, (value) => {
     console.log(value, 'deep 속성을 watch하고 있을 경우');
     watchNoneText.value = '--- Watch 반영 완료 ---'
+});
+// ----------------------------------------------------------------
+const immediateTest1 = ref('페이지 로딩')
+
+watch(immediateTest1, () => {
+    immediateTest1.value = '--- Watch 반영 완료 ---'
+}, { immediate: true });
+// ----------------------------------------------------------------
+const immediateTest2 = ref('페이지 로딩')
+
+watch(immediateTest2, () => {
+    immediateTest2.value = '--- Watch 반영 완료 ---'
 });
 </script>

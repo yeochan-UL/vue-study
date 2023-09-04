@@ -60,7 +60,7 @@
                 <v-window-item value="watch">
                     <v-card flat>
                         <v-card-text>
-                            <WatchTest />
+                            <WatchComponent />
                         </v-card-text>
                     </v-card>
                 </v-window-item>
@@ -89,7 +89,7 @@ import BarComponent from './components/BarComponent.vue';
 import LineComponent from './components/LineComponent.vue';
 import KeyComponent from './components/KeyComponent.vue';
 import EventComponent from './components/EventComponent.vue';
-import WatchTest from '../module/WatchTest.vue';
+import WatchComponent from './components/WatchComponent.vue';
   const tab = ref(null);
   </script>
   
