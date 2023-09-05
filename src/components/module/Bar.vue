@@ -12,8 +12,6 @@ const props = defineProps([
     'labels', 'datasets'
 ]);
 
-console.log(props.datasets, props.labels);
-
 const { chartElement, updateChartDatas, updateChartLabel } = useChart({
     type: 'bar',
     labels: props.labels,
