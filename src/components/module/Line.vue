@@ -21,7 +21,7 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
             intersect: false,
             mode: 'index',
         },
-        maintainAspectRatio: false,
+        // maintainAspectRatio: false,
         plugins: {
             legend: { display: false },
             tooltip: { enabled: true },
