@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# vue-study
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+vue에 대한 기본적인 실험 + chart.js 등 각종 라이브러리에 대한 실험을 한 스토리지입니다.
 
-## Recommended IDE Setup
+## 기술 스택
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+vue3 Composition api
+javascript
+css
+html
+chart.js
