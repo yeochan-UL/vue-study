@@ -43,7 +43,7 @@ const setup = (props) => {
         chart.update();
     }
 
-    // lifecycle
+    // lifecycle 마운트가 완료 되고 async -> await 데이터가 들어오면 그때 initChart를 실행한다.
     onMounted(async () => {
         await nextTick()
         initChart();

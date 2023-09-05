@@ -1,20 +1,32 @@
 <template>
-    <h2 style="margin-top: 30px;">질병관리청_코로나19 국내발생현황</h2>
-    <div style="display: flex; justify-self: center;">
-        <Bar 
-            style="margin-top: 30px; width: 500px; height: 100%;"
-            :labels="mmddArray"
-            :datasets="cntArray"
-        />
-        <Line 
-            style="margin-top: 30px; width: 500px; height: 100%; margin-left: 50px;"
-            :labels="mmddArray"
-            :datasets="cntArray"
-        />
-    </div>
-    <h3 style="margin-top: 40px;">
-        들어오는 데이터 형식 : <span class="spanLayout">{{ resData }}</span>   
-    </h3>
+    <v-card style="padding: 20px;">
+        <template v-slot:title>
+            질병관리청_코로나19 국내발생현황
+        </template>
+        <template v-slot:subtitle>
+            공공 Api에서 받아와 Bar, Line 컴포넌트를 활용하여 그려낸 chart입니다.
+        </template>
+        <div style="display: flex; justify-self: center;">
+            <Bar 
+                style="margin-top: 30px; width: 500px; height: 100%;"
+                :labels="mmddArray"
+                :datasets="cntArray"
+            />
+            <Line 
+                style="margin-top: 30px; width: 500px; height: 100%; margin-left: 50px;"
+                :labels="mmddArray"
+                :datasets="cntArray"
+            />
+        </div>
+        <h3 style="margin-top: 40px;">
+            들어오는 데이터 형식 : <span class="spanLayout">{{ resData }}</span>   
+        </h3>
+        <h3 class="pt-5">
+            가공 된 데이터 : 
+            <span class="spanLayout">{{ cntArray }}</span>
+            <span class="spanLayout">{{ mmddArray }}</span>
+        </h3>
+    </v-card>
 </template>
 
 <script setup>
@@ -23,24 +35,7 @@ import Line from '../module/Line.vue'
 import { ref, watch, onMounted, nextTick } from 'vue';
 import request from 'axios';
 
-let resData = ref({
-    cnt8: '',
-    mmdd8: '',
-    cnt7: '',
-    mmdd7: '',
-    cnt6: '',
-    mmdd6: '',
-    cnt5: '',
-    mmdd5: '',
-    cnt4: '',
-    mmdd4: '',
-    cnt3: '',
-    mmdd3: '',
-    cnt2: '',
-    mmdd2: '',
-    cnt1: '',
-    mmdd1: ''
-});
+let resData = ref({});
 
 const getData = async (params) => {
     const url = "http://apis.data.go.kr/1790387/covid19CurrentStatusConfirmations/covid19CurrentStatusConfirmationsJson?serviceKey=qGgEFX9oODY%2BXEvbfmXwl%2FiG5K6Eth8EoARTEvua8g3ms%2BHfRxhmEOeHaLYPYzEQNHf6MkQgKHbdDf7mefTrDA%3D%3D"
@@ -59,7 +54,7 @@ onMounted(async () => {
 let cntArray = ref([
     {
         data: new Array(7).fill(0),
-        backgroundColor: '#50bcdf',
+        backgroundColor: '#0099FF',
     },
 ]);
 
@@ -84,13 +79,11 @@ watch(resData, (data1, data2) => {
         }
     }
 
-    const dayData = mmdd.filter(item => !/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(item));
-
-    mmdd = dayData
-
+    // datasets
     cntArray = cnt;
-    mmddArray = mmdd;
-}, {deep: true});
+    // labels
+    mmddArray = mmdd.filter(item => !/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(item));
+});
 </script>
 
 <style>

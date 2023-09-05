@@ -47,6 +47,7 @@ import { ref } from 'vue';
 const clickItem = ref('');
 
 const onClick = (e) => {
+    console.log(e, '이벤트가 발생 되었다.');
     clickItem.value = e
 };
 </script>

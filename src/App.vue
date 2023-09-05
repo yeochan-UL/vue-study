@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import MainLayout from './components/layout/MainLayout.vue'
 import TabComponent from './components/layout/TabComponent.vue';
 
 </script>

@@ -17,12 +17,36 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
     labels: props.labels,
     datasets: props.datasets,
     options:{
-        plugins:{
-            legend: {
-                display: false
+        interaction: {
+            intersect: false,
+            mode: 'index',
+        },
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true },
+        },
+        responsive: true,
+        min: 0,
+        max: 100,
+        scales: {
+            x: {
+                grid: { color: '#dedfe4' },
+                ticks: {
+                    color: '#717886',
+                    font: { size: 12 },
+                    padding: 2,
+                },
             },
-            tooltip: { enabled: false },
-        }
+            y: {
+                grid: { color: '#dedfe4' },
+                ticks: {
+                    color: '#717886',
+                    font: { size: 9 },
+                    padding: 5,
+                },
+            },
+        },
     }
 });
 
