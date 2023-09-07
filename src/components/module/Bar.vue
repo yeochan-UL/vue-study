@@ -18,7 +18,7 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
     datasets: props.datasets,
     options: {
         layout: { padding: 0 },
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
             legend: { display: false },
             title: { display: false },
