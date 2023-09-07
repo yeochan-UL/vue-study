@@ -29,21 +29,16 @@ export const useListStore = defineStore("main",{
                 const datas = this.resData.value
 
                 if (datas) {
-                    for (const key in datas) {
-                        if (key.startsWith('cnt')) {
-                            if (key !== 'cnt8') {
-                                cnt.push(datas[key]);
-                            }
-                        } else if (key.startsWith('mmdd')) {
-                            mmdd.push(datas[key]);
-                        }
-                    }
+                    Object.entries(datas).forEach(([key, value]) => {
+                        key.startsWith('cnt') && key !== 'cnt8' ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
+                    });
                 }
 
             this.cntArray[0].data = cnt;
             
             // labels
             this.mmddArray.value = mmdd.filter(item => !/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(item));
+            
             } catch (error) {
                 console.log(error);
             }
