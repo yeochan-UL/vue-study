@@ -28,7 +28,7 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
              */ 
             mode: 'index',
         },
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { display: false },
             tooltip: { enabled: true },
