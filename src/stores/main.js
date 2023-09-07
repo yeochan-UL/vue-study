@@ -38,25 +38,7 @@ export const useListStore = defineStore("main",{
             
             // labels
             this.mmddArray.value = mmdd.filter(item => !/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(item));
-            
-            } catch (error) {
-                console.log(error);
-            }
-        },
-        async updateData() {
-            try {
-                datasets.value = new Array(10)
-                    .fill(0)
-                    .map(() => randomInt(0, 100));
 
-                // 새로운 라벨 생성
-                labels.value = new Array(10)
-                    .fill('')
-                    .map(
-                        (value, index) => dayjs()
-                            .subtract(index, 'second')
-                            .format('HH:mm:ss'),
-                    );
             } catch (error) {
                 console.log(error);
             }
