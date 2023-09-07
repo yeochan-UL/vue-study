@@ -1,3 +1,5 @@
 <template>
-    <h1>아직은 안한 상태임</h1>
+    <v-card>
+        <img src="../../assets/img/work.png" alt="공사 중">
+    </v-card>
 </template>

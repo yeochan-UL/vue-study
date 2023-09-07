@@ -5,7 +5,7 @@
     <div>
         <v-tabs  v-model="tab">
             <v-tab value="vueStudy">VUE3 STUDY</v-tab>
-            <v-tab value="vueApiStudy">ApiStudy</v-tab>
+            <v-tab value="vueApiStudy">Chart Study</v-tab>
             <v-tab value="vueSoketIo">SoketIo</v-tab>
         </v-tabs>
         <v-window  v-model="tab">

@@ -10,6 +10,7 @@ const setup = (props) => {
     // 초기 차트 설정
     const initChart = () => {
         if (chartElement.value) {
+            // new Chart 생성자
             chart = new Chart(chartElement.value, {
                 type: props.type,
                 data: {

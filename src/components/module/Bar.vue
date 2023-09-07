@@ -18,7 +18,7 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
     datasets: props.datasets,
     options: {
         layout: { padding: 0 },
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
             legend: { display: false },
             title: { display: false },
@@ -27,14 +27,11 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
         responsive: true,
         scales: {
             x: {
-                beginAtZero: true,
                 grid: {
                     color: '#dedfe4',
+                    drawOnChartArea: false,
                     drawTicks: false,
                 },
-                min: 0,
-                max: 100,
-                // x 축 텍스트
                 ticks: {
                     backdropPadding: 0,
                     color: '#717886',
@@ -43,15 +40,12 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
                 },
             },
             y: {
-                beginAtZero: true,
                 grid: {
                     color: '#dedfe4',
                     drawOnChartArea: false,
                     drawTicks: false,
                 },
-                // y 축 텍스트
                 ticks: {
-                    backdropPadding: 0,
                     color: '#717886',
                     font: { size: 10 },
                     padding: 5,
@@ -60,11 +54,7 @@ const { chartElement, updateChartDatas, updateChartLabel } = useChart({
         },
     },
 });
-
-watch(() => props.datasets, ((datas) => {
-    // console.log(datas, '들어오는 데이터');
-    updateChartDatas(datas, 0)
-}));
+watch(() => props.datasets, (datas) => updateChartDatas(datas, 0));
 
 watch(() => props.labels, updateChartLabel);
 </script>

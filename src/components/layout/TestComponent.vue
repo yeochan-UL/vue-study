@@ -11,17 +11,11 @@
                 direction="vertical"
                 color="light-blue-darken-2"
             >
-                <v-tab value="line">
+                <v-tab value="event">
                     <v-icon start>
                         mdi-account
                     </v-icon>
-                        Line Chart 
-                </v-tab>
-                <v-tab value="bar">
-                    <v-icon start>
-                        mdi-account
-                    </v-icon>
-                        Bar Chart 
+                        key event
                 </v-tab>
                 <v-tab value="watch">
                     <v-icon start>
@@ -35,25 +29,13 @@
                     </v-icon>
                         Key
                 </v-tab>
-                <v-tab value="event">
-                    <v-icon start>
-                        mdi-account
-                    </v-icon>
-                        key event
-                </v-tab>
+                
             </v-tabs>
             <v-window v-model="tab">
-                <v-window-item value="line">
+                <v-window-item value="event">
                     <v-card flat>
                         <v-card-text>
-                            <LineComponent />
-                        </v-card-text>
-                    </v-card>
-                </v-window-item>
-                <v-window-item value="bar">
-                    <v-card flat>
-                        <v-card-text>
-                            <BarComponent />
+                            <EventComponent />
                         </v-card-text>
                     </v-card>
                 </v-window-item>
@@ -71,25 +53,16 @@
                         </v-card-text>
                     </v-card>
                 </v-window-item>
-                <v-window-item value="event">
-                    <v-card flat>
-                        <v-card-text>
-                            <EventComponent />
-                        </v-card-text>
-                    </v-card>
-                </v-window-item>
             </v-window>
         </div>
     </v-card>
 </template>
   
-  <script setup>
-  import { ref } from 'vue';
-import BarComponent from './components/BarComponent.vue';
-import LineComponent from './components/LineComponent.vue';
+<script setup>
+import { ref } from 'vue';
+
 import KeyComponent from './components/KeyComponent.vue';
 import EventComponent from './components/EventComponent.vue';
 import WatchComponent from './components/WatchComponent.vue';
-  const tab = ref(null);
-  </script>
-  
+const tab = ref(null);
+</script>
