@@ -41,14 +41,14 @@ const props = defineProps([
 ])
 
 const imageList = ref([
-    { src: 'work-on.gif', alt: '이미지 1', width: 150, height: 150 },
+    { src: 'work-on.gif', alt: 'image', width: 150, height: 150 },
 ]);
 
 const addImage = () => {
     // 이미지 추가 버튼 클릭 시 새 이미지 데이터 추가
     imageList.value.push({
         src: 'work-on.gif',
-        alt: '새 이미지',
+        alt: 'image',
         width: 150,
         height: 150,
     });

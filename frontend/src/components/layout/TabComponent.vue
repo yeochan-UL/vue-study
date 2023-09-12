@@ -27,14 +27,14 @@
             <v-window-item value="vueApiStudy">
             <v-card flat>
                 <v-card-text>
-                <TwoLayout />
+                <CovidChartComponent />
                 </v-card-text>
             </v-card>
             </v-window-item>
             <v-window-item value="vueSoketIo">
             <v-card flat>
                 <v-card-text>
-                <ThreeComponent />
+                <SoketComponent />
                 </v-card-text>
             </v-card>
             </v-window-item>
@@ -46,8 +46,8 @@
 import { ref, onMounted } from 'vue'
 import dayjs from "dayjs";
 import MainLayout from './MainLayout.vue';
-import TwoLayout from './TwoLayout.vue';
-import ThreeComponent from './ThreeComponent.vue';
+import CovidChartComponent from './CovidChartComponent.vue';
+import SoketComponent from './SoketComponent.vue';
 import ImagesDragComponent from './components/ImgesDragg/ImagesDragComponent.vue';
 
 const currentTime = ref(dayjs().format('YYYY년MM월DD일 HH시mm분ss초'));

@@ -29,6 +29,7 @@ export const useListStore = defineStore("main",{
                 const datas = this.resData.value
 
                 if (datas) {
+                    // key와 value를 쌍의 배열을 반환 시킨 후 forEach로 순회하며 cnt가 들어가거나 cnt8이 아닌 경우 cnt 배열에 넣도록한다. key가 mmdd로 시작하면 mmdd 배열 value를 넣는다.
                     Object.entries(datas).forEach(([key, value]) => {
                         key.startsWith('cnt') && key !== 'cnt8' ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     });
