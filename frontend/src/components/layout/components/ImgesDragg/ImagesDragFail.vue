@@ -19,7 +19,7 @@
             }"
         >
         <img 
-                src= "../../../../assets/img/icon.png"
+                src= "/images/icon.png"
                 style="width: 100px; height: 100px;" 
             />
         </div>

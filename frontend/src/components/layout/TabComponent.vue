@@ -13,7 +13,7 @@
             <v-window-item value="konva">
             <v-card flat>
                 <v-card-text>
-                <KonvaComponent />
+                <ImagesDragComponent />
                 </v-card-text>
             </v-card>
             </v-window-item>
@@ -48,8 +48,7 @@ import dayjs from "dayjs";
 import MainLayout from './MainLayout.vue';
 import TwoLayout from './TwoLayout.vue';
 import ThreeComponent from './ThreeComponent.vue';
-import KonvaComponent from './components/ImgesDragg/KonvaComponent.vue';
-import VueuseDraggComponent from './components/ImgesDragg/VueuseDraggComponent.vue';
+import ImagesDragComponent from './components/ImgesDragg/ImagesDragComponent.vue';
 
 const currentTime = ref(dayjs().format('YYYY년MM월DD일 HH시mm분ss초'));
 
