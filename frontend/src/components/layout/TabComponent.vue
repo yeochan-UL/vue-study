@@ -4,11 +4,19 @@
     </v-system-bar>
     <div>
         <v-tabs  v-model="tab">
+            <v-tab value="konva">Drag images</v-tab>
             <v-tab value="vueStudy">VUE3 STUDY</v-tab>
             <v-tab value="vueApiStudy">Chart Study</v-tab>
             <v-tab value="vueSoketIo">SoketIo</v-tab>
         </v-tabs>
         <v-window  v-model="tab">
+            <v-window-item value="konva">
+            <v-card flat>
+                <v-card-text>
+                <KonvaComponent />
+                </v-card-text>
+            </v-card>
+            </v-window-item>
             <v-window-item value="vueStudy">
             <v-card flat>
                 <v-card-text>
@@ -40,6 +48,8 @@ import dayjs from "dayjs";
 import MainLayout from './MainLayout.vue';
 import TwoLayout from './TwoLayout.vue';
 import ThreeComponent from './ThreeComponent.vue';
+import KonvaComponent from './components/ImgesDragg/KonvaComponent.vue';
+import VueuseDraggComponent from './components/ImgesDragg/VueuseDraggComponent.vue';
 
 const currentTime = ref(dayjs().format('YYYY년MM월DD일 HH시mm분ss초'));
 

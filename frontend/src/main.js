@@ -3,6 +3,11 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import axios from 'axios'
+/**
+ * 드래그 라이브러리
+ * https://mauricius.github.io/vue-draggable-resizable/?path=/story/parent--parent-basic-case
+*/
+import { VueDraggableResizable } from 'vue-draggable-resizable-vue3';
 
 const pinia = createPinia()
 import router from './router';
@@ -24,6 +29,7 @@ const app = createApp(App);
 app.provide('axios', axios);
 
 app.use(router)
+    .use(VueDraggableResizable)
     .use(pinia)
     .use(GlobalComponent)
     .use(vuetify)
