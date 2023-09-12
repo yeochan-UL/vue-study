@@ -4,8 +4,8 @@
     height="500px"
 />   -->
 <VueDraggable
-    width="500px"
-    height="500px"
+    height="600px"
+    width="800px"
 />
 
 </template>
