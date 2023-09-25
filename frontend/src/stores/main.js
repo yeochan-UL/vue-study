@@ -35,7 +35,7 @@ export const useListStore = defineStore("main", {
                     //     key.startsWith('cnt') && key !== 'cnt8' ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     // });
                         
-                    // 리듀스 를 사용해서 해보자. --- 미션
+                    // 리듀스 를 사용해서 해보자. --- 미션  
                     Object.entries(datas).reduce((acc, [key, value]) => {
                         key.startsWith('cnt') ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     })
