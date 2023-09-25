@@ -19,9 +19,9 @@
             }"
         >
         <img 
-                src= "/images/icon.png"
-                style="width: 100px; height: 100px;" 
-            />
+            src= "/images/icon.png"
+            style="width: 100px; height: 100px;" 
+        />
         </div>
     </div>
   </template>
@@ -47,7 +47,8 @@ const { width, height } = useElementBounding(draggable);
 const { x, y } = useDraggable(draggable);
 
 const locationX = computed(() => 
-    // left을 기준으로 x를 min, right - width가 max이다.
+    // 1. min, 2. value, 3 max
+    // x 현재, x가 left 보다 작으면 left 반환 x가 right - width 보다 크면 right-width 반환 그래서 안에서 머물게함
     clamp(left.value, x.value, right.value - width.value)
 );
 
@@ -55,4 +56,6 @@ const locationY = computed(() =>
     // top을 기준으로 y를 min, bottom -heght가 max이다.
     clamp(top.value, y.value, bottom.value - height.value)
 );
+
+
 </script>

@@ -4,16 +4,24 @@
     </v-system-bar>
     <div>
         <v-tabs  v-model="tab">
-            <v-tab value="konva">Drag images</v-tab>
+            <v-tab value="imgDarag">Drag images</v-tab>
+            <v-tab value="jsStudy">javascript study</v-tab>
             <v-tab value="vueStudy">VUE3 STUDY</v-tab>
             <v-tab value="vueApiStudy">Chart Study</v-tab>
             <v-tab value="vueSoketIo">SoketIo</v-tab>
         </v-tabs>
         <v-window  v-model="tab">
-            <v-window-item value="konva">
+            <v-window-item value="imgDarag">
             <v-card flat>
                 <v-card-text>
                 <ImagesDragComponent />
+                </v-card-text>
+            </v-card>
+            </v-window-item>
+            <v-window-item value="jsStudy">
+            <v-card flat>
+                <v-card-text>
+                <JsStudyComponent />
                 </v-card-text>
             </v-card>
             </v-window-item>
@@ -47,6 +55,7 @@ import { ref, onMounted } from 'vue'
 import dayjs from "dayjs";
 import MainLayout from './MainLayout.vue';
 import CovidChartComponent from './CovidChartComponent.vue';
+import JsStudyComponent from './JsStudyComponent.vue';
 import SoketComponent from './SoketComponent.vue';
 import ImagesDragComponent from './components/ImgesDragg/ImagesDragComponent.vue';
 

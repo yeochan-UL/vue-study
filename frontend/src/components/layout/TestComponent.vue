@@ -11,6 +11,18 @@
                 direction="vertical"
                 color="light-blue-darken-2"
             >
+                <v-tab value="refReactive">
+                    <v-icon start>
+                        mdi-account
+                    </v-icon>
+                    Ref(), Reactive()
+                </v-tab>
+                <v-tab value="nextTick">
+                    <v-icon start>
+                        mdi-account
+                    </v-icon>
+                    nextTick()
+                </v-tab>
                 <v-tab value="event">
                     <v-icon start>
                         mdi-account
@@ -32,6 +44,20 @@
                 
             </v-tabs>
             <v-window v-model="tab">
+                <v-window-item value="refReactive">
+                    <v-card flat>
+                        <v-card-text>
+                            <RefReactiveComponent />
+                        </v-card-text>
+                    </v-card>
+                </v-window-item>
+                <v-window-item value="nextTick">
+                    <v-card flat>
+                        <v-card-text>
+                            <NextTickComponent />
+                        </v-card-text>
+                    </v-card>
+                </v-window-item>
                 <v-window-item value="event">
                     <v-card flat>
                         <v-card-text>
@@ -61,8 +87,10 @@
 <script setup>
 import { ref } from 'vue';
 
-import KeyComponent from './components/KeyComponent.vue';
-import EventComponent from './components/EventComponent.vue';
-import WatchComponent from './components/WatchComponent.vue';
+import KeyComponent from './components/vue/KeyComponent.vue';
+import EventComponent from './components/vue/EventComponent.vue';
+import WatchComponent from './components/vue/WatchComponent.vue';
+import RefReactiveComponent from './components/vue/RefReactiveComponent.vue';
+import NextTickComponent from './components/vue/NextTickComponent.vue';
 const tab = ref(null);
 </script>
