@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import request from 'axios';
 
-// ㅇㅖ외 처리
+// 예외 처리
 
 const url = 'http://apis.data.go.kr/1790387/covid19CurrentStatusConfirmations/covid19CurrentStatusConfirmationsJson?serviceKey=qGgEFX9oODY%2BXEvbfmXwl%2FiG5K6Eth8EoARTEvua8g3ms%2BHfRxhmEOeHaLYPYzEQNHf6MkQgKHbdDf7mefTrDA%3D%3D';
 
@@ -37,7 +37,6 @@ export const useListStore = defineStore("main",{
                         
                     // 리듀스 를 사용해서 해보자. --- 미션
                     Object.entries(datas).reduce((acc, [key, value]) => {
-                        console.log(acc, 'acc아');
                         key.startsWith('cnt') ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     })
                 }
@@ -48,7 +47,7 @@ export const useListStore = defineStore("main",{
             this.mmddArray.value = mmdd.filter(item => !/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(item));
 
             } catch (error) {
-                console.log(error);
+                console.log(error, '에러 메세지');
             }
         },
     },
