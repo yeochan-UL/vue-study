@@ -6,7 +6,7 @@ import request from 'axios';
 
 const url = 'http://apis.data.go.kr/1790387/covid19CurrentStatusConfirmations/covid19CurrentStatusConfirmationsJson?serviceKey=qGgEFX9oODY%2BXEvbfmXwl%2FiG5K6Eth8EoARTEvua8g3ms%2BHfRxhmEOeHaLYPYzEQNHf6MkQgKHbdDf7mefTrDA%3D%3D';
 
-export const useListStore = defineStore("main",{
+export const useListStore = defineStore("main", {
     state: () => ({
         resData: ref([]),
         cntArray: ref([
