@@ -19,9 +19,9 @@
             </v-tab>
             <v-tab value="option-2">
                 <v-icon start>
-                    mdi-lock
+                    reduce
                 </v-icon>
-                Option 2
+                reduce()
             </v-tab>
             <v-tab value="option-3">
                 <v-icon start>
@@ -34,13 +34,14 @@
         <v-window-item value="option-1">
             <v-card flat>
                 <v-card-text>
-                <structuredClone />
+                    <structuredClone />
                 </v-card-text>
             </v-card>
         </v-window-item>
         <v-window-item value="option-2">
             <v-card flat>
                 <v-card-text>
+                    <ReduceJs />
                 </v-card-text>
             </v-card>
         </v-window-item>
@@ -58,6 +59,7 @@
 <script setup>
 import { ref } from 'vue';
 import structuredClone from './components/js/structuredClone.vue';
+import ReduceJs from './components/js/reduceJs.vue';
 
 const tab = ref('option-1');
 </script>

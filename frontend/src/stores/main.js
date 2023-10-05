@@ -34,9 +34,12 @@ export const useListStore = defineStore("main", {
                     // Object.entries(datas).forEach(([key, value]) => {
                     //     key.startsWith('cnt') && key !== 'cnt8' ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     // });
-                        
+                    
+                    const arrKeyValue = Object.entries(datas);
+                    console.log(arrKeyValue);
+
                     // 리듀스 를 사용해서 해보자. --- 미션  
-                    Object.entries(datas).reduce((acc, [key, value]) => {
+                    arrKeyValue.reduce((acc, [key, value]) => {
                         key.startsWith('cnt') ? cnt.push(value) : key.startsWith('mmdd') && mmdd.push(value);
                     })
                 }
